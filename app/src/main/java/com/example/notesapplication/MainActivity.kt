@@ -1,5 +1,6 @@
 package com.example.notesapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -14,11 +15,12 @@ class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
     lateinit var notesRV:RecyclerView
     lateinit var addFab: FloatingActionButton
     lateinit var viewModel: NoteViewModel
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        notesRV = findViewById(R.id.RvNotes)
-        addFab = findViewById(R.id.FABAddNote)
+        notesRV = findViewById(R.id.recViewNotes)
+        addFab = findViewById(R.id.FABddNote)
         notesRV.layoutManager = LinearLayoutManager(this)
 
         val noteRVAdapter = NoteRVAdapter(this,this,this)

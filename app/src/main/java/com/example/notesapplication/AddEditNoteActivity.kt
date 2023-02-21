@@ -26,8 +26,9 @@ class AddEditNoteActivity : AppCompatActivity() {
         noteTitleEdt = findViewById(R.id.idEdtNoteTitle)
         noteDecsriptionEdt= findViewById(R.id.idEdNoteDescription)
         addUpdateBtn = findViewById(R.id.idBtnAddUpdate)
-        viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application))
-            .get(NoteViewModel::class.java)
+        viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory
+            .getInstance(application)).get(NoteViewModel::class.java)
+
         val noteType = intent.getStringExtra("noteType")
         if (noteType.equals("Edit")){
             val noteTitle = intent.getStringExtra("noteTitle")
